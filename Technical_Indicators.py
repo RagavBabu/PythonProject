@@ -4,13 +4,13 @@ import yfinance as yf
 import numpy as np
 import pandas as pd
 import streamlit as st
-stock = st.text_input("Enter the stock ticker you wish to analyze:", key="stock_key", on_change="")
+stock = st.text_input("Enter the stock ticker you wish to analyze:")
 stock=stock.upper()
-date =  st.text_input("Enter the date at which you would like to start the analysis of this stock(YYYY-MM-DD):", key="date_key", on_change="")
-days = st.text_input("Enter the length of the period you would like to analyze with a unit('d' or 'h'):", key='days_key', on_change="")
-Interval = st.text_input("Enter the interval between each data point you would like to analyze('m', 'h', 'd'):",  key="Interval_key", on_change="")
+date =  st.text_input("Enter the date at which you would like to start the analysis of this stock(YYYY-MM-DD):")
+days = st.text_input("Enter the length of the period you would like to analyze with a unit('d' or 'h'):")
+Interval = st.text_input("Enter the interval between each data point you would like to analyze('m', 'h', 'd'):")
 st.write("Please enter the indicator you would like to use to analyze this stock")
-Indicator = st.text_input("Options: \nWilliams_R \nMACD \nEMA \nRSI \nVWAP", key="Indicator_key", on_change="")
+Indicator = st.text_input("Options: \nWilliams_R \nMACD \nEMA \nRSI \nVWAP")
 data=yf.download(stock, start=date, period = days, interval = Interval)
 Close = data['Close']
 High = data['High']
