@@ -1,1 +1,6 @@
 streamlit
+matplotlib.pyplot
+datetime
+yfinance
+numpy
+pandas
