@@ -17,6 +17,7 @@ def reset():
     days = ""
     Interval = ""
     Indicator = ""
+    st.write("Please re-enter the variables you would like to replace")
     return stock, date, days, Interval, Indicator
 
 st.button("Click to reset variables", on_click=reset, type="primary")
