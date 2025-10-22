@@ -4,13 +4,13 @@ import yfinance as yf
 import numpy as np
 import pandas as pd
 import streamlit as st
-stock = st.text_input("Enter the stock ticker you wish to analyze:", value= st.session_state.stock, key="stock_key", on_change="")
+stock = st.text_input("Enter the stock ticker you wish to analyze:", key="stock_key", on_change="")
 stock=stock.upper()
-date =  st.text_input("Enter the date at which you would like to start the analysis of this stock(YYYY-MM-DD):", value= st.session_state.date_value, key="date_key", on_change="")
-days = st.text_input("Enter the length of the period you would like to analyze with a unit('d' or 'h'):", value= st.session_state.days_value,key='days_key', on_change="")
-Interval = st.text_input("Enter the interval between each data point you would like to analyze('m', 'h', 'd'):", value= st.session_state.Interval_value, key="Interval_key", on_change="")
+date =  st.text_input("Enter the date at which you would like to start the analysis of this stock(YYYY-MM-DD):", key="date_key", on_change="")
+days = st.text_input("Enter the length of the period you would like to analyze with a unit('d' or 'h'):", key='days_key', on_change="")
+Interval = st.text_input("Enter the interval between each data point you would like to analyze('m', 'h', 'd'):",  key="Interval_key", on_change="")
 st.write("Please enter the indicator you would like to use to analyze this stock")
-Indicator = st.text_input("Options: \nWilliams_R \nMACD \nEMA \nRSI \nVWAP", value= st.session_state.Indicator_value, key="Indicator_key", on_change="")
+Indicator = st.text_input("Options: \nWilliams_R \nMACD \nEMA \nRSI \nVWAP", key="Indicator_key", on_change="")
 data=yf.download(stock, start=date, period = days, interval = Interval)
 Close = data['Close']
 High = data['High']
@@ -125,16 +125,6 @@ def calc_VWAP(data):
     st.pyplot(plt.gcf())
     return data['VWAP']
 
-def reset_inputs():
-    st.session_state.stock_value = ""
-    st.session_state.date_value = ""
-    st.session_state.days_value = ""
-    st.session_state.Interval = ""
-    st.session_state.Indicator = ""
-    st.rerun()
-
-if st.button("Reset Inputs"):
-    reset_inputs()
 
 if Indicator == 'Williams_R':
     calc_Williams_R(data)
