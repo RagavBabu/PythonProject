@@ -127,27 +127,27 @@ def calc_VWAP(data):
 
 if Indicator == 'Williams_R':
     calc_Williams_R(data)
-    for key in st.session_state.keys():
+    for key in st.session_state.key():
         del st.session_state[key]
 elif Indicator == 'MACD':
     calc_MACD(data)
-    for key in st.session_state.keys():
+    for key in st.session_state.key():
         del st.session_state[key]
 elif Indicator == 'EMA':
     calc_EMA(data)
-    for key in st.session_state.keys():
+    for key in st.session_state.key():
         del st.session_state[key]
 elif Indicator == 'RSI':
     calc_RSI(data)
-    for key in st.session_state.keys():
+    for key in st.session_state.key():
         del st.session_state[key]
 elif Indicator == 'ROC':
     calc_ROC(data)
-    for key in st.session_state.keys():
+    for key in st.session_state.key():
         del st.session_state[key]
 elif Indicator == 'VWAP':
     calc_VWAP(data)
-    for key in st.session_state.keys():
+    for key in st.session_state.key():
         del st.session_state[key]
 else:
     print('This is not a valid technical indicator')
