@@ -4,7 +4,7 @@ import yfinance as yf
 import numpy as np
 import pandas as pd
 import streamlit as st
-stock = st.text_input("Enter the stock ticker you wish to analyze:", value= st.session_state.stock_value, key="stock_key", on_change=update_stock)
+stock = st.text_input("Enter the stock ticker you wish to analyze:", value= st.session_state.stock, key="stock_key", on_change=update_stock)
 stock=stock.upper()
 date =  st.text_input("Enter the date at which you would like to start the analysis of this stock(YYYY-MM-DD):", value= st.session_state.date_value, key="date_key", on_change=update_date)
 days = st.text_input("Enter the length of the period you would like to analyze with a unit('d' or 'h'):", value= st.session_state.days_value,key='days_key', on_change=update_days)
