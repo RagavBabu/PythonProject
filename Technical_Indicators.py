@@ -11,6 +11,15 @@ days = st.text_input("Enter the length of the period you would like to analyze w
 Interval = st.text_input("Enter the interval between each data point you would like to analyze('m', 'h', 'd'):")
 st.write("Please enter the indicator you would like to use to analyze this stock")
 Indicator = st.text_input("Options: \nWilliams_R \nMACD \nEMA \nRSI \nVWAP")
+def reset():
+    stock = ""
+    date = ""
+    days = ""
+    Interval = ""
+    Indicator = ""
+    return stock, date, days, Interval, Indicator
+
+st.button("Click to reset variables", on_click=reset, type="primary")
 data=yf.download(stock, start=date, period = days, interval = Interval)
 Close = data['Close']
 High = data['High']
@@ -128,27 +137,21 @@ def calc_VWAP(data):
 
 if Indicator == 'Williams_R':
     calc_Williams_R(data)
-    for key in st.session_state.key():
-        del st.session_state[key]
+
 elif Indicator == 'MACD':
     calc_MACD(data)
-    for key in st.session_state.key():
-        del st.session_state[key]
+
 elif Indicator == 'EMA':
     calc_EMA(data)
-    for key in st.session_state.key():
-        del st.session_state[key]
+
 elif Indicator == 'RSI':
     calc_RSI(data)
-    for key in st.session_state.key():
-        del st.session_state[key]
+
 elif Indicator == 'ROC':
     calc_ROC(data)
-    for key in st.session_state.key():
-        del st.session_state[key]
+
 elif Indicator == 'VWAP':
     calc_VWAP(data)
-    for key in st.session_state.key():
-        del st.session_state[key]
+
 else:
     print('This is not a valid technical indicator')
