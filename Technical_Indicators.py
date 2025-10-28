@@ -4,10 +4,13 @@ import yfinance as yf
 import numpy as np
 import pandas as pd
 import streamlit as st
-stock = "aapl"
-stock = st.text_input("Enter the stock ticker you wish to analyze:")
+stock = st.text_input("Enter the stock ticker:")
+if stock = None:
+    stock = "aapl"
+else:
+    print("nothing")
 stock=stock.upper()
-date =  st.text_input("Enter the date at which you would like to start the analysis of this stock(YYYY-MM-DD):")
+date =  st.text_input("Adjust the start date (YYYY-MM-DD):")
 data=yf.download(stock, start=date, period = "90d", interval = "1d")
 Close = data['Close']
 High = data['High']
@@ -20,7 +23,6 @@ def calc_Williams_R(data, Williams_R=None):
         Highest_High = High.rolling(window=14).max()
         Lowest_Low = Low.rolling(window=14).min()
         Williams_R = -100 * ((Highest_High - Close) / (Highest_High - Lowest_Low))
-        print('If the value is greater than -20, the market is at the top of its recent range. If the value is lower than -80, the market is at the bottom of its recent range.')
         plt.title(stock + ' Williams Percent Range')
         plt.xlabel('Date')
         plt.xticks(fontsize=8)
