@@ -20,6 +20,25 @@ def reset():
     st.write("Please re-enter the variables you would like to replace")
     return stock, date, days, Interval, Indicator
 
+if st.button("Williams_R"):
+    calc_Williams_R(data)
+
+if st.button("MACD"):
+    calc_MACD(data)
+
+if st.button("EMA"):
+    calc_EMA(data)
+
+if st.button("RSI"):
+    calc_RSI(data)
+
+if st.button("ROC"):
+    calc_ROC(data)
+
+if st.button("VWAP"):
+    calc_VWAP(data)
+
+
 st.button("Click to reset variables", on_click=reset, type="primary")
 data=yf.download(stock, start=date, period = days, interval = Interval)
 Close = data['Close']
@@ -136,23 +155,3 @@ def calc_VWAP(data):
     return data['VWAP']
 
 
-if Indicator == 'Williams_R':
-    calc_Williams_R(data)
-
-elif Indicator == 'MACD':
-    calc_MACD(data)
-
-elif Indicator == 'EMA':
-    calc_EMA(data)
-
-elif Indicator == 'RSI':
-    calc_RSI(data)
-
-elif Indicator == 'ROC':
-    calc_ROC(data)
-
-elif Indicator == 'VWAP':
-    calc_VWAP(data)
-
-else:
-    print('This is not a valid technical indicator')
