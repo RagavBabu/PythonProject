@@ -8,7 +8,6 @@ stock = st.text_input("Enter the stock ticker you wish to analyze:")
 stock=stock.upper()
 date =  st.text_input("Enter the date at which you would like to start the analysis of this stock(YYYY-MM-DD):")
 data=yf.download(stock, start=date, period = "90d", interval = "1d")
-st.write(data)
 Close = data['Close']
 High = data['High']
 Low = data['Low']
@@ -95,6 +94,7 @@ def calc_ROC(data, n=14):
     plt.xlabel('Date')
     plt.xticks(fontsize=8)
     plt.ylabel('Percent Change')
+    plt.title(stock + ' Rate of Change')
     plt.grid(True)
     plt.show()
     st.pyplot(plt.gcf())
@@ -110,11 +110,12 @@ def calc_VWAP(data):
     plt.xlabel('Date')
     plt.xticks(fontsize=8)
     plt.ylabel('Price')
+    plt.title(stock + ' Volume-Weighted Average Price')
     plt.grid(True)
     plt.show()
     st.pyplot(plt.gcf())
     return data['VWAP']
-
+st.write("Only toggle one button at a time")
 Williams_R=st.toggle("Williams_R")
 MACD=st.toggle("MACD")
 EMA=st.toggle("EMA")
