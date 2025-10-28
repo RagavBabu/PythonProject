@@ -7,7 +7,7 @@ import streamlit as st
 stock = st.text_input("Enter the stock ticker you wish to analyze:")
 stock=stock.upper()
 date =  st.text_input("Enter the date at which you would like to start the analysis of this stock(YYYY-MM-DD):")
-data=yf.download(stock, start=date, period = "1d", interval = "90d")
+data=yf.download(stock, start="date", period = "1d", interval = "90d")
 st.write(data)
 Close = data['Close']
 High = data['High']
