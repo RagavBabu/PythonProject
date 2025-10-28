@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 stock = st.text_input("Enter the stock ticker:")
-if stock = None:
+if stock == None:
     stock = "aapl"
 else:
     print("nothing")
