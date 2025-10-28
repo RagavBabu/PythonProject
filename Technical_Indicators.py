@@ -128,23 +128,23 @@ RSI=st.toggle("RSI")
 ROC=st.toggle("ROC")
 VWAP=st.toggle("VWAP")
 
-#if Indicator == 'Williams_R':
- #   calc_Williams_R(data)
+if Williams_R:
+    calc_Williams_R(data)
 
-#elif Indicator == 'MACD':
- #   calc_MACD(data)
+elif MACD:
+    calc_MACD(data)
 
-#elif Indicator == 'EMA':
- #   calc_EMA(data)
+elif EMA:
+    calc_EMA(data)
 
-#elif Indicator == 'RSI':
- #   calc_RSI(data)
+elif RSI:
+    calc_RSI(data)
 
-#elif Indicator == 'ROC':
- #   calc_ROC(data)
+elif ROC:
+    calc_ROC(data)
 
-#elif Indicator == 'VWAP':
- #   calc_VWAP(data)
+elif VWAP:
+    calc_VWAP(data)
 
-#else:
- #   print('This is not a valid technical indicator')
+else:
+    st.button("bruh")
