@@ -8,6 +8,7 @@ stock = st.text_input("Enter the stock ticker you wish to analyze:")
 stock=stock.upper()
 date =  st.text_input("Enter the date at which you would like to start the analysis of this stock(YYYY-MM-DD):")
 data=yf.download(stock, start=date, period = "1d", interval = "90d")
+st.write(data)
 Close = data['Close']
 High = data['High']
 Low = data['Low']
@@ -27,12 +28,10 @@ def calc_Williams_R(data, Williams_R=None):
         plt.ylim(-100, 0)
         plt.grid(True)
         plt.plot(Williams_R)
-        print(Volume)
         plt.show()
         st.pyplot(plt.gcf())
         return Williams_R
     else:
-        print('Period is not long enough, please increase it to include more than 27 business days to obtain Williams % data')
         return Williams_R
 
 def calc_MACD(data):
@@ -50,7 +49,6 @@ def calc_MACD(data):
     plt.xticks(fontsize=8)
     plt.title(stock + ' Moving Average Convergence/Divergence')
     plt.grid(True)
-    print(Volume)
     st.pyplot(plt.gcf())
     plt.show()
     return data['MACD_Histogram']
@@ -64,7 +62,6 @@ def calc_EMA(data):
     plt.xticks(fontsize=8)
     plt.ylabel('Price')
     plt.grid(True)
-    print(Volume)
     st.pyplot(plt.gcf())
     plt.show()
     return data['EMA']
@@ -88,7 +85,6 @@ def calc_RSI(data):
         plt.xticks(fontsize=8)
         plt.ylabel('Index Value')
         plt.grid(True)
-        print(Volume)
         plt.show()
         st.pyplot(plt.gcf())
         return rsi
@@ -100,7 +96,6 @@ def calc_ROC(data, n=14):
     plt.xticks(fontsize=8)
     plt.ylabel('Percent Change')
     plt.grid(True)
-    print(Volume)
     plt.show()
     st.pyplot(plt.gcf())
 
@@ -116,7 +111,6 @@ def calc_VWAP(data):
     plt.xticks(fontsize=8)
     plt.ylabel('Price')
     plt.grid(True)
-    print(Volume)
     plt.show()
     st.pyplot(plt.gcf())
     return data['VWAP']
@@ -145,6 +139,3 @@ elif ROC:
 
 elif VWAP:
     calc_VWAP(data)
-
-else:
-    st.button("bruh")
