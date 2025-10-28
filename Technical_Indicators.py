@@ -10,7 +10,7 @@ date =  st.text_input("Enter the date at which you would like to start the analy
 days = st.text_input("Enter the length of the period you would like to analyze with a unit('d' or 'h'):")
 Interval = st.text_input("Enter the interval between each data point you would like to analyze('m', 'h', 'd'):")
 st.write("Please enter the indicator you would like to use to analyze this stock")
-Indicator = st.text_input("Options: \nWilliams_R \nMACD \nEMA \nRSI \nVWAP")
+#Indicator = st.text_input("Options: \nWilliams_R \nMACD \nEMA \nRSI \nVWAP")
 def reset():
     stock = ""
     date = ""
@@ -155,3 +155,23 @@ def calc_VWAP(data):
     return data['VWAP']
 
 
+#if Indicator == 'Williams_R':
+ #   calc_Williams_R(data)
+
+#elif Indicator == 'MACD':
+ #   calc_MACD(data)
+
+#elif Indicator == 'EMA':
+ #   calc_EMA(data)
+
+#elif Indicator == 'RSI':
+ #   calc_RSI(data)
+
+#elif Indicator == 'ROC':
+ #   calc_ROC(data)
+
+#elif Indicator == 'VWAP':
+ #   calc_VWAP(data)
+
+#else:
+ #   print('This is not a valid technical indicator')
