@@ -4,6 +4,7 @@ import yfinance as yf
 import numpy as np
 import pandas as pd
 import streamlit as st
+stock = "aapl"
 stock = st.text_input("Enter the stock ticker you wish to analyze:")
 stock=stock.upper()
 date =  st.text_input("Enter the date at which you would like to start the analysis of this stock(YYYY-MM-DD):")
