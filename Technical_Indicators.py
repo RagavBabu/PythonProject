@@ -121,12 +121,12 @@ def calc_VWAP(data):
     st.pyplot(plt.gcf())
     return data['VWAP']
 
-st.button("Williams_R", on_click=calc_Williams_R(data), type="primary")
-st.button("MACD", on_click=calc_MACD(data), type="primary")
-st.button("EMA", on_click=calc_EMA(data), type="primary")
-st.button("RSI", on_click=calc_RSI(data), type="primary")
-st.button("ROC", on_click=calc_ROC(data), type="primary")
-st.button("VWAP", on_click=calc_VWAP(data), type="primary")
+Williams_R=st.toggle("Williams_R")
+MACD=st.toggle("MACD")
+EMA=st.toggle("EMA")
+RSI=st.toggle("RSI")
+ROC=st.toggle("ROC")
+VWAP=st.toggle("VWAP")
 
 #if Indicator == 'Williams_R':
  #   calc_Williams_R(data)
