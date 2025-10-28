@@ -11,8 +11,6 @@ date =  st.text_input("Enter the date at which you would like to start the analy
 #Interval = st.text_input("Enter the interval between each data point you would like to analyze('m', 'h', 'd'):")
 #st.write("Please enter the indicator you would like to use to analyze this stock")
 #Indicator = st.text_input("Options: \nWilliams_R \nMACD \nEMA \nRSI \nVWAP")
-days = "90d"
-Interval = "1d"
 def reset():
     stock = ""
     date = ""
@@ -24,7 +22,7 @@ def reset():
 
 
 st.button("Click to reset variables", on_click=reset, type="primary")
-data=yf.download(stock, start=date, period = days, interval = Interval)
+data=yf.download(stock, start=date, period = "1d", interval = "90d")
 Close = data['Close']
 High = data['High']
 Low = data['Low']
