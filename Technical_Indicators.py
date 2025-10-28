@@ -7,10 +7,7 @@ import streamlit as st
 stock = st.text_input("Enter the stock ticker you wish to analyze:")
 stock=stock.upper()
 date =  st.text_input("Enter the date at which you would like to start the analysis of this stock(YYYY-MM-DD):")
-#days = st.text_input("Enter the length of the period you would like to analyze with a unit('d' or 'h'):")
-#Interval = st.text_input("Enter the interval between each data point you would like to analyze('m', 'h', 'd'):")
-#st.write("Please enter the indicator you would like to use to analyze this stock")
-#Indicator = st.text_input("Options: \nWilliams_R \nMACD \nEMA \nRSI \nVWAP")
+
 def reset():
     stock = ""
     date = ""
@@ -136,12 +133,12 @@ def calc_VWAP(data):
     st.pyplot(plt.gcf())
     return data['VWAP']
 
-st.button("Williams_R", on_click=calc_Williams_R, type="primary")
-st.button("MACD", on_click=calc_MACD, type="primary")
-st.button("EMA", on_click=calc_EMA, type="primary")
-st.button("RSI", on_click=calc_RSI, type="primary")
-st.button("ROC", on_click=calc_ROC, type="primary")
-st.button("VWAP", on_click=calc_VWAP, type="primary")
+st.button("Williams_R", on_click=calc_Williams_R(data), type="primary")
+st.button("MACD", on_click=calc_MACD(data), type="primary")
+st.button("EMA", on_click=calc_EMA(data), type="primary")
+st.button("RSI", on_click=calc_RSI(data), type="primary")
+st.button("ROC", on_click=calc_ROC(data), type="primary")
+st.button("VWAP", on_click=calc_VWAP(data), type="primary")
 
 #if Indicator == 'Williams_R':
  #   calc_Williams_R(data)
