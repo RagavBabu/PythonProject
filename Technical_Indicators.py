@@ -7,18 +7,6 @@ import streamlit as st
 stock = st.text_input("Enter the stock ticker you wish to analyze:")
 stock=stock.upper()
 date =  st.text_input("Enter the date at which you would like to start the analysis of this stock(YYYY-MM-DD):")
-
-def reset():
-    stock = ""
-    date = ""
-    days = ""
-    Interval = ""
-    Indicator = ""
-    st.write("Please re-enter the variables you would like to replace")
-    return stock, date, days, Interval, Indicator
-
-
-st.button("Click to reset variables", on_click=reset, type="primary")
 data=yf.download(stock, start=date, period = "1d", interval = "90d")
 Close = data['Close']
 High = data['High']
