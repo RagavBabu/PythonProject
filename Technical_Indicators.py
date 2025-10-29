@@ -4,7 +4,6 @@ import yfinance as yf
 import numpy as np
 import pandas as pd
 import streamlit as st
-stock="aapl"
 stock = st.text_input("Enter the stock ticker:")
 stock=stock.upper()
 date =  st.text_input("Adjust the start date (YYYY-MM-DD):")
@@ -115,28 +114,40 @@ def calc_VWAP(data):
     plt.show()
     st.pyplot(plt.gcf())
     return data['VWAP']
-st.write("Only toggle one button at a time")
-Williams_R=st.toggle("Williams_R")
-MACD=st.toggle("MACD")
-EMA=st.toggle("EMA")
-RSI=st.toggle("RSI")
-ROC=st.toggle("ROC")
-VWAP=st.toggle("VWAP")
 
-if Williams_R:
+graph = st.radio("Select a technical indicator", ["Williams_R", "MACD", "EMA", "RSI", "ROC", "VWAP"],
+                 captions=["Williams Percent Range",
+                           "Moving Average Convergence/Divergence",
+                           "Exponential Moving Average",
+                           "Relative Strength Index",
+                           "Rate of Change",
+                           "Volume Weighted Average Price"])
+
+
+
+
+#st.write("Only toggle one button at a time")
+#Williams_R=st.toggle("Williams_R")
+#MACD=st.toggle("MACD")
+#EMA=st.toggle("EMA")
+#RSI=st.toggle("RSI")
+#ROC=st.toggle("ROC")
+#VWAP=st.toggle("VWAP")
+
+if graph == "Williams_R":
     calc_Williams_R(data)
 
-elif MACD:
+elif graph == "MACD":
     calc_MACD(data)
 
-elif EMA:
+elif graph == "EMA":
     calc_EMA(data)
 
-elif RSI:
+elif graph == "RSI":
     calc_RSI(data)
 
-elif ROC:
+elif graph == "ROC":
     calc_ROC(data)
 
-elif VWAP:
+elif graph == "VWAP":
     calc_VWAP(data)
