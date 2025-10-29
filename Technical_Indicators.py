@@ -4,7 +4,7 @@ import yfinance as yf
 import numpy as np
 import pandas as pd
 import streamlit as st
-stock = st.text_input("Enter the stock ticker:")
+stock = st.text_input("Enter the stock ticker:", "AAPL")
 stock=stock.upper()
 date =  st.text_input("Adjust the start date (YYYY-MM-DD):")
 data=yf.download(stock, start=date, period = "90d", interval = "1d")
