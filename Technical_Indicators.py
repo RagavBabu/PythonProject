@@ -121,6 +121,14 @@ def calc_VWAP(data):
     plt.show()
     st.pyplot(plt.gcf())
     return data['VWAP']
+@st.dialog("Indicator Information", width="medium", dismissible=True, on_dismiss="ignore")
+def info():
+    st.write("Williams Percent Range")
+    st.caption("A momentum indicator that suggests a stock being oversold in the range of -80% to -100% and overbought in the range of 0% to -20%.")
+    st.write("MACD")
+    st.caption("When MACD falls below the signal line, it is an indicator of a downward trend. When MACD crosses above the signal line, it is an indicator of an upward trend." )
+if st.button("Learn More"):
+    info()
 
 graph = st.radio("Select a technical indicator", ["Williams_R", "MACD", "EMA", "RSI", "ROC", "VWAP"],
                  captions=["Williams Percent Range",
