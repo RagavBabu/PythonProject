@@ -127,6 +127,14 @@ def info():
     st.caption("A momentum indicator that suggests a stock being oversold in the range of -80% to -100% and overbought in the range of 0% to -20%.")
     st.write("MACD")
     st.caption("When MACD falls below the signal line, it is an indicator of a downward trend. When MACD crosses above the signal line, it is an indicator of an upward trend." )
+    st.write("EMA")
+    st.caption("A moving average that has a stronger emphasis on recent data points. Offers an advantage in responding fast to price fluctuations")
+    st.write("RSI")
+    st.caption("When RSI holds a value above 70, it is suggested that a stock is overbought. \nWhen RSI holds a value below 30, it is suggested that a stock is oversold")
+    st.write("ROC")
+    st.caption("Calculates the speed of price changes. If it is positive, prices are rising. If it is negative, prices are falling.")
+    st.write("VWAP")
+    st.caption("The average price of a stock based on volume and price. Similar to a moving average but smoother")
 if st.button("Learn More"):
     info()
 
