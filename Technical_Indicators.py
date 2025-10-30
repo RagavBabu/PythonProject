@@ -14,7 +14,8 @@ High = data['High']
 Low = data['Low']
 Volume = data['Volume']
 period = len(Close)
-
+price_info = yf.Ticker(stock)
+current_price = price_info.info.get("regularMarketPrice")
 def calc_Williams_R(data, Williams_R=None):
     if period > 27:
         Highest_High = High.rolling(window=14).max()
@@ -147,15 +148,8 @@ graph = st.radio("Select a technical indicator", ["Williams_R", "MACD", "EMA", "
                            "Volume Weighted Average Price"])
 
 
+st.write(f"Current price is **{current_price}**")
 
-
-#st.write("Only toggle one button at a time")
-#Williams_R=st.toggle("Williams_R")
-#MACD=st.toggle("MACD")
-#EMA=st.toggle("EMA")
-#RSI=st.toggle("RSI")
-#ROC=st.toggle("ROC")
-#VWAP=st.toggle("VWAP")
 
 if graph == "Williams_R":
     calc_Williams_R(data)
