@@ -148,7 +148,7 @@ graph = st.radio("Select a technical indicator", ["Williams_R", "MACD", "EMA", "
                            "Volume Weighted Average Price"])
 
 
-st.write(f"Current price is **{current_price}**")
+st.subheader(f"Current price is **{current_price}**")
 
 
 if graph == "Williams_R":
