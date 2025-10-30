@@ -128,14 +128,14 @@ def info():
     st.write("MACD")
     st.caption("When MACD falls below the signal line, it is an indicator of a downward trend. When MACD crosses above the signal line, it is an indicator of an upward trend." )
     st.write("EMA")
-    st.caption("A moving average that has a stronger emphasis on recent data points. Offers an advantage in responding fast to price fluctuations")
+    st.caption("A moving average that has a stronger emphasis on recent data points. Offers an advantage in responding fast to price fluctuations.")
     st.write("RSI")
-    st.caption("When RSI holds a value above 70, it is suggested that a stock is overbought. \nWhen RSI holds a value below 30, it is suggested that a stock is oversold")
+    st.caption("When RSI holds a value above 70, it is suggested that a stock is overbought. \nWhen RSI holds a value below 30, it is suggested that a stock is oversold.")
     st.write("ROC")
     st.caption("Calculates the speed of price changes. If it is positive, prices are rising. If it is negative, prices are falling.")
     st.write("VWAP")
-    st.caption("The average price of a stock based on volume and price. Similar to a moving average but smoother")
-if st.button("Learn More"):
+    st.caption("The average price of a stock based on volume and price. Similar to a moving average but smoother.")
+if st.button("Indicator Information"):
     info()
 
 graph = st.radio("Select a technical indicator", ["Williams_R", "MACD", "EMA", "RSI", "ROC", "VWAP"],
