@@ -8,7 +8,6 @@ st.title("Technical Indicator Dashboard")
 stock = st.text_input("Enter the stock ticker:", "AAPL")
 stock=stock.upper()
 date =  st.text_input("Adjust the start date (YYYY-MM-DD):")
-for i in range(10)
 data=yf.download(stock, start=date, period = "90d", interval = "1d")
 Close = data['Close']
 High = data['High']
