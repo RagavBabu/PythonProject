@@ -4,3 +4,4 @@ datetime
 yfinance==0.2.66
 numpy
 pandas
+stocknews
