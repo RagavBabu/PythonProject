@@ -4,6 +4,7 @@ import yfinance as yf
 import numpy as np
 import pandas as pd
 import streamlit as st
+from stocknews import StockNews
 st.title("Technical Indicator Dashboard")
 stock = st.text_input("Enter the stock ticker:", "AAPL")
 stock=stock.upper()
