@@ -181,7 +181,7 @@ df, _ = sn.summarize()
 sentiment = df['sentiment_title_avg'][:3]
 sentiment_mean = (sentiment[0] + sentiment[1] + sentiment[2])/3
 if sentiment_mean < 0:
-    st.write('Recent news about this stock has been negative and suggests bearish conditions')
+    st.subheader('Recent news about this stock has been negative and suggests bearish conditions')
 elif sentiment_mean > 0:
-    st.write('Recent news about this stock has been positive and suggests bullish conditions')
+    st.subheader('Recent news about this stock has been positive and suggests bullish conditions')
 
