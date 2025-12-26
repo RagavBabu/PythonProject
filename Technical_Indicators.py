@@ -179,7 +179,7 @@ elif graph == "VWAP":
 sn = StockNews(stock, wt_key = 'MY_WORLD_TRADING_DATA_KEY')
 df, _ = sn.summarize()
 sentiment = df['sentiment_title_avg'][:3]
-sentiment_mean = sentiment.mean()
+sentiment_mean = (sentiment[0] + sentiment[1] + sentiment[2])/3
 st.write(sentiment_mean)
 
 
