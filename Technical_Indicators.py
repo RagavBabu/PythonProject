@@ -171,8 +171,7 @@ elif graph == "VWAP":
     calc_VWAP(data)
 
 
-news = stock
 sn = StockNews(stock, wt_key = 'MY_WORLD_TRADING_DATA_KEY')
-summary = sn.summarize()
-sentiment = summary.columns
-st.write(sentiment)
+df= sn.summarize()
+st.write(df)
+st.write(df.columns)
