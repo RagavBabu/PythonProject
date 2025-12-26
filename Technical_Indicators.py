@@ -175,3 +175,4 @@ sn = StockNews(stock, wt_key = 'MY_WORLD_TRADING_DATA_KEY')
 df= sn.summarize()
 st.write(df)
 Updated_df = pd.DataFrame(df)
+
