@@ -174,4 +174,5 @@ elif graph == "VWAP":
 news = stock
 sn = StockNews(stock, wt_key = 'MY_WORLD_TRADING_DATA_KEY')
 summary = sn.summarize()
-st.write(summary.columns)
+sentiment = summary.columns
+st.write(sentiment)
