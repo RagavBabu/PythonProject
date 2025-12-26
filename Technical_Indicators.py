@@ -174,6 +174,4 @@ elif graph == "VWAP":
 sn = StockNews(stock, wt_key = 'MY_WORLD_TRADING_DATA_KEY')
 df= sn.summarize()
 st.write(df)
-transposed_data = zip(*df)
-column_data = list(transposed_data)['sentiment_title_avg']
-st.write(column_data)
+Updated_df = pd.DataFrame(df)
